@@ -6,5 +6,3 @@ const apiSuccess = (req, res, response) => apiResponse(req, res, 200, {
 });
 
 module.exports = apiSuccess
-
-// export default apiSuccess;
