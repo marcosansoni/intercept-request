@@ -1,8 +1,13 @@
-const apiResponse = require("./apiResponse")
+const sessionHeader = require("../utils/sessionHeader")
 
-const apiSuccess = (req, res, response) => apiResponse(req, res, 200, {
-  success: true,
-  ...response,
-});
+const apiSuccess = (req, res, response) => {
+
+  sessionHeader(req, res);
+
+  return res.status(200).json({
+    success: true,
+    result: response,
+  })
+}
 
 module.exports = apiSuccess

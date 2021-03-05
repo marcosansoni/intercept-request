@@ -1,9 +1,12 @@
-const apiResponse = require("./apiResponse");
+const sessionHeader = require("../utils/sessionHeader")
 
-const apiError = (req, res, errors = []) => apiResponse(req, res, 400, {
-  success: false,
-  errors,
-});
+const apiError = (req, res, errors = []) => {
+  sessionHeader(req, res);
+  return res.status(400).json({
+    success: false,
+    result: errors,
+  })
+}
 
 module.exports = apiError;
 
