@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: http-proxy-middleware
+    versions:
+    - 1.1.0
+    - 1.1.1
+    - 1.1.2
+    - 1.2.0
